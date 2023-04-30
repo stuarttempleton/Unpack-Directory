@@ -1,16 +1,14 @@
-### SYNOPSIS
-
-Recursively unpacks all zip files in specified directory.
-
-### DESCRIPTION
+# Unpack-Directory
 
 Recursively unpacks all zip files, beginning in specified directory. Uses built in Expand-Archive. Does not unpack zips within zips, but does recurse directories.
+
+## Parameters and Inputs
 
 ### PARAMETER Directory
 
 Specifies the path to begin unpacking. REQUIRED.
 
-## PARAMETER MaxDepth
+### PARAMETER MaxDepth
 
 Specifies the maximum depth to recursively unpack. 
 Default: 5
@@ -27,7 +25,7 @@ Test unpacking to show what would happen in a real run. Good for making sure you
 
 None. You cannot pipe objects to Unpack-Directory.
 
-### EXAMPLE
+## Examples
 
 At its simplest, just give it a directory.
 
@@ -35,15 +33,11 @@ At its simplest, just give it a directory.
 PS> .\Unpack-Directory -Directory "C:\Music\"
 ```
 
-### EXAMPLE
-
 You can specify a custom maximum depth to recurse. Just in case.
 
 ```powershell
 PS> .\Unpack-Directory -Directory "C:\Music\" -MaxDepth 3
 ```
-
-### EXAMPLE
 
 You can include "what if" and "force overwrite" switches, if you like.
 
