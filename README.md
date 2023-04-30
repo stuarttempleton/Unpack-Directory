@@ -1,21 +1,21 @@
-# Unpack-Directory
+## Unpack-Directory
 
 Recursively unpacks all zip files, beginning in specified directory. Uses built in Expand-Archive. Does not unpack zips within zips, but does recurse directories.
 
-### -Directory
+#### -Directory
 
 Specifies the path to begin unpacking. REQUIRED.
 
-### -MaxDepth
+#### -MaxDepth
 
 Specifies the maximum depth to recursively unpack. 
 Default: 5
 
-### -Force
+#### -Force
 
 Force unpacking to overwrite target directors. Can be dangerous!
 
-### -WhatIf
+#### -WhatIf
 
 Test unpacking to show what would happen in a real run. Good for making sure you're set up.
 
