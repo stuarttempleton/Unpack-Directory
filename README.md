@@ -2,28 +2,24 @@
 
 Recursively unpacks all zip files, beginning in specified directory. Uses built in Expand-Archive. Does not unpack zips within zips, but does recurse directories.
 
-## Parameters and Inputs
-
-### PARAMETER Directory
+### -Directory
 
 Specifies the path to begin unpacking. REQUIRED.
 
-### PARAMETER MaxDepth
+### -MaxDepth
 
 Specifies the maximum depth to recursively unpack. 
 Default: 5
 
-### PARAMETER Force
+### -Force
 
 Force unpacking to overwrite target directors. Can be dangerous!
 
-### PARAMETER WhatIf
+### -WhatIf
 
 Test unpacking to show what would happen in a real run. Good for making sure you're set up.
 
-### INPUTS
-
-None. You cannot pipe objects to Unpack-Directory.
+*Note: You cannot pipe objects to Unpack-Directory.*
 
 ## Examples
 
