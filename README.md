@@ -26,6 +26,34 @@ Force clean up of all zip files after use. Use with caution!
 
 *Note: You cannot pipe objects to Unpack-Directory.*
 
+## Directory Structures
+
+What does this work on? What directory structures is this for? Anything with a smattering of archives that might be stored in some kind of heirarchy.
+
+Something like a music library, where the albums are archived individually. (ex., e-music.com)
+```
+C:\Music\
+  Artist\
+    album.zip
+    album2.zip
+  Artist2
+    album.zip
+    album2.zip
+```
+
+Maybe a user directory that has individual user archives. Use the -MaxDepth flag for fine-tuned control.
+```
+C:\Users\
+  Alice\
+    archive.zip
+  Bob\
+    archive.zip
+  Reginald\
+    archive.zip
+    mail\
+      another_archive.zip
+```
+
 ## Examples
 
 At its simplest, just give it a directory.
