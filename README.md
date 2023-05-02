@@ -44,11 +44,11 @@ C:\Music\
 Maybe a user directory that has individual user archives. Use the -MaxDepth flag for fine-tuned control.
 ```
 C:\Users\
-  Alice\
+  Miss_Yvonne\
     archive.zip
-  Bob\
+  Cowboy_Curtis\
     archive.zip
-  Reginald\
+  Reba\
     archive.zip
     mail\
       another_archive.zip
