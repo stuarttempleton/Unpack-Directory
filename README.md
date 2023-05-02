@@ -19,6 +19,11 @@ Force unpacking to overwrite target directors. Can be dangerous!
 
 Test unpacking to show what would happen in a real run. Good for making sure you're set up.
 
+#### -RemoveArchiveAfterUse
+
+Force clean up of all zip files after use. Use with caution!
+
+
 *Note: You cannot pipe objects to Unpack-Directory.*
 
 ## Examples
@@ -35,8 +40,8 @@ You can specify a custom maximum depth to recurse. Just in case.
 PS> .\Unpack-Directory -Directory "C:\Music\" -MaxDepth 3
 ```
 
-You can include "what if" and "force overwrite" switches, if you like.
+You can include "what if", "force overwrite", and "remove archive files" switches, if you like.
 
 ```powershell
-PS> .\Unpack-Directory -Directory "C:\Music\" -MaxDepth 15 -WhatIf -Force
+PS> .\Unpack-Directory -Directory "C:\Music\" -MaxDepth 15 -WhatIf -Force -RemoveArchiveAfterUse
 ```

@@ -24,6 +24,10 @@ Force unpacking to overwrite target directors. Can be dangerous!
 
 Test unpacking to show what would happen in a real run. Good for making sure you're set up.
 
+.PARAMETER RemoveArchiveAfterUse
+
+Force clean up of all zip files after use. Use with caution!
+
 .INPUTS
 
 None. You cannot pipe objects to Unpack-Directory.
@@ -38,7 +42,7 @@ PS> .\Unpack-Directory -Directory "C:\Music\" -MaxDepth 3
 
 .EXAMPLE
 
-PS> .\Unpack-Directory -Directory "C:\Music\" -MaxDepth 15 -WhatIf
+PS> .\Unpack-Directory -Directory "C:\Music\" -MaxDepth 15 -WhatIf -RemoveArchiveAfterUse
 #>
 
 
@@ -47,7 +51,8 @@ param
     [string]$Directory = $(throw "Directory parameter is required."),
     [int]$MaxDepth,
     [switch]$Force,
-    [switch]$WhatIf
+    [switch]$WhatIf,
+    [switch]$RemoveArchiveAfterUse
 )
 $CurrentDepth = 0
 
@@ -61,7 +66,11 @@ if ($MaxDepth -lt 1)
 function Invoke-UncompressFile([string]$FilePath, [string]$DestinationPath) 
 {
     Write-Output "Unpacking: $FilePath > $DestinationPath" 
-    Expand-Archive -LiteralPath $FilePath -DestinationPath $DestinationPath -Force:$Force -WhatIf:$WhatIf -ErrorAction Ignore
+    Expand-Archive -LiteralPath $FilePath -DestinationPath $DestinationPath -Force:$Force -WhatIf:$WhatIf -ErrorAction Stop
+    if ($RemoveArchiveAfterUse) {
+        Write-Output "Removing file: $FilePath"
+        Remove-Item -LiteralPath $FilePath -WhatIf:$WhatIf -ErrorAction Stop
+    }
 }
 
 function Invoke-UncompressDirectory([string]$DirectoryPath)
